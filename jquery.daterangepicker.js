@@ -653,6 +653,20 @@
 				box.remove();
 				$(window).unbind('resize.datepicker',calcPosition);
 				$(document).unbind('click.datepicker',closeDatePicker);
+			},
+			/**
+			 * @param m {'1'|'2'} [m] - Number of calendar
+			 */
+			selectYear: function(year, m) {
+				m = m || '1'
+				showMonth(moment(m == '1' ? opt.month1 : opt.month2).year(year).toDate(), 'month' + m)
+			},
+			/**
+			 * @param m {'1'|'2'} [m] - Number of calendar
+			 */
+			selectMonth: function(month, m) {
+				m = m || '1'
+				showMonth(moment(m == '1' ? opt.month1 : opt.month2).month(month).toDate(), 'month' + m)
 			}
 		});
 
